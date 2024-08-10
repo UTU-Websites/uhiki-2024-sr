@@ -1,0 +1,127 @@
+/* Basic body styles, kept separate for easier encapsulation */
+.calendar-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Calendar container */
+.calendar {
+  position: relative;
+  width: 300px;
+  background-color: #fff;
+  box-shadow: 0 5px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Picture section */
+.calendar__picture {
+  position: relative;
+  height: 200px;
+  padding: 20px;
+  color: #fff;
+  background: #262626 url("https://images.unsplash.com/photo-1516912481808-3406841bd33c?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=183f2924ba5a8429441804609b2d4f61") no-repeat center / cover;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  border-radius: 8px 8px 0 0;
+}
+
+.calendar__picture::before {
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.1));
+  border-radius: 8px 8px 0 0;
+}
+
+.calendar__picture h2, .calendar__picture h3 {
+  margin: 0;
+  z-index: 1;
+  position: relative;
+}
+
+.calendar__picture p {
+  margin: 10px 0 0;
+  font-size: 14px;
+  z-index: 1;
+  position: relative;
+}
+
+
+/* Calendar grid */
+#calendar-grid {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 10px;
+  box-sizing: border-box;
+}
+
+/* Days (S, M, T, W, T, F, S) */
+.calendar__day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.calendar__day:nth-child(7) {
+  color: #ff685d;
+}
+
+/* Calendar days (1, 2, 3, ...) */
+.calendar__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  color: #262626;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.calendar__number--event {
+  background-color: #ffeb3b; /* Highlight color for days with events */
+  font-weight: bold;
+}
+
+.calendar__number--current {
+  background-color: #009688;
+  color: #fff;
+  font-weight: 700;
+}
+
+.calendar__number:hover {
+  background-color: #ddd;
+}
+
+/* Buttons for navigating months */
+#calendar-controls {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 20px;
+}
+
+#calendar-controls button {
+  background-color: #009688;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#calendar-controls button:hover {
+  background-color: #00796b;
+}
+
