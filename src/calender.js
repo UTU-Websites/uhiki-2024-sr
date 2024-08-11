@@ -18,18 +18,31 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextMonthButton = document.getElementById('next-month');
 
     const events = {
-        // Add more events here
-        '2024-08-10': [
-            { time: '10:00 AM', event: 'Meeting with client' },
-            { time: '02:00 PM', event: 'Project Review' }
-        ],
-        '2024-08-15': [
-            { time: '09:00 AM', event: 'Project deadline' }
-        ],
-        '2024-08-20': [
-            { time: '09:00 AM', event: 'Project deadline' }
-        ],
+        // Add your events here with custom background images
+        '2024-08-10': {
+            events: [
+                { time: '10:00 AM', event: 'Meeting with client' },
+                { time: '02:00 PM', event: 'Project Review' }
+            ],
+            image: 'images/couple-8342763_1920.jpg' // Custom background image for this day
+        },
+        '2024-08-11': {
+            events: [
+                { time: '10:00 AM', event: 'Meeting with client' },
+                { time: '02:00 PM', event: 'Project Review' }
+            ],
+            image: 'images/black-and-white-2590810_1920.jpg' // Custom background image for this day
+        },
+        '2024-08-15': {
+            events: [
+                { time: '09:00 AM', event: 'Project deadline' }
+            ],
+            image: 'images/wedding-rings-1284225.jpg' // Custom background image for this day
+        },
+        // Add more events with custom images as needed
     };
+
+    const defaultImage = 'images/ai-generated-8678444.jpg'; // Default background image
 
     let currentDate = new Date();
 
@@ -73,6 +86,9 @@ document.addEventListener('DOMContentLoaded', function () {
             
             if (i === currentDate.getDate() && month === new Date().getMonth() && year === new Date().getFullYear()) {
                 dateDiv.classList.add('calendar__number--current');
+                if (events[fullDate]) {
+                    dateDiv.classList.add('calendar__number--current-event');
+                }
                 updateEventDetails(fullDate);
             }
 
@@ -86,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
             calendarDate.textContent = `${new Date(fullDate).getDate()}, ${new Date(fullDate).toLocaleString('default', { weekday: 'long' })}`;
             calendarEvent.innerHTML = '';
 
-            eventDetails.forEach((event, index) => {
+            eventDetails.events.forEach(event => {
                 const eventItem = document.createElement('p');
                 const eventTime = document.createElement('strong');
                 eventTime.textContent = `${event.time}: `;
@@ -101,11 +117,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 calendarEvent.appendChild(eventItem);
             });
 
-            calendarPicture.style.backgroundImage = 'url("https://via.placeholder.com/300x200.png?text=Event+Day")';
+            // Set the custom background image for the event day
+            calendarPicture.style.backgroundImage = `url('${eventDetails.image}')`;
         } else {
             calendarDate.textContent = `${new Date(fullDate).getDate()}, ${new Date(fullDate).toLocaleString('default', { weekday: 'long' })}`;
             calendarEvent.textContent = 'No events today. Coming soon on the next date.';
-            calendarPicture.style.backgroundImage = 'url("https://images.unsplash.com/photo-1516912481808-3406841bd33c?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=183f2924ba5a8429441804609b2d4f61")';
+            calendarPicture.style.backgroundImage = `url('${defaultImage}')`;
         }
     }
 
