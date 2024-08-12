@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
             calendarPicture.style.backgroundImage = `url('${eventDetails.image}')`;
         } else {
             calendarDate.textContent = `${new Date(fullDate).getDate()}, ${new Date(fullDate).toLocaleString('default', { weekday: 'long' })}`;
-            calendarEvent.textContent = 'No events today. Coming soon on the next date.';
+            calendarEvent.textContent = 'No events today.';
             calendarPicture.style.backgroundImage = `url('${defaultImage}')`;
         }
     }
