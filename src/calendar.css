@@ -21,7 +21,7 @@
 /* Picture section */
 .calendar__picture {
   position: relative;
-  height: 200px;
+  height: auto;
   padding: 20px;
   color: #fff;
   background: #262626 url("images/default-background.png") no-repeat center / cover; /* Default background image */
@@ -145,13 +145,14 @@
 /* From Uiverse.io by yaroslavas2001 */ 
 .btn {
   height: 4em;
-  width: 12em;
+  width: 9em;
   display: flex;
   align-items: center;
   justify-content: center;
   background: transparent;
   border: 0px solid black;
   cursor: pointer;
+  padding: 0;
 }
 
 .wrapper {
@@ -169,9 +170,10 @@
   z-index: 1;
   color: #000;
   padding: 4px 12px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.705);
   transition: all 0.5s ease;
+  border: 0.3px solid rgba(0, 0, 0, 0.664);
 }
 
 .flower {
@@ -219,8 +221,8 @@
   height: 1em;
   width: 1em;
   border-radius: 40% 70% / 7% 90%;
-  background: linear-gradient(#07a6d7, #93e0ee);
-  border: 0.5px solid #96d1ec;
+  background: linear-gradient(#ee98cb, #d6c3a5);
+  border: 0.3px solid #ffffff;
   z-index: 0;
   transition: width 0.8s ease, height 0.8s ease;
 }
@@ -238,8 +240,8 @@
 }
 
 .btn:hover .petal {
-  background: linear-gradient(#0761d7, #93bdee);
-  border: 0.5px solid #96b4ec;
+  background: linear-gradient(#ee98cb, #d6c3a5);
+  border: 0.3px solid #ffffff;
 }
 
 .btn:hover .flower {
