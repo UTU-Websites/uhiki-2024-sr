@@ -669,7 +669,7 @@ video {
 }
 
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) {
   body {
     /*Background Settings*/
     background-image: url("/images/0090b-1024x1024.jpg");
