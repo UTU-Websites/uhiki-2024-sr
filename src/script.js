@@ -30,6 +30,7 @@ for (var i = 0; i < coll.length; i++) {
       content.style.maxHeight = content.scrollHeight + "px";
     } 
   });
+}
 });
 
 document.addEventListener("DOMContentLoaded", function() {
