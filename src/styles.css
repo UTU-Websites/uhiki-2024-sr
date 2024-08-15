@@ -533,10 +533,7 @@ ul {
   backface-visibility: hidden;
 }
 
-/*Tribute*/
-#more {
-  display:none;
-}
+
  
 @keyframes border-transform{
   0%,100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; } 
@@ -564,6 +561,11 @@ ul {
 
 .card-back p {
   color: #0c1c00;
+}
+
+/*Tribute*/
+#more {
+  display:none;
 }
 
 /*Appreciation*/
