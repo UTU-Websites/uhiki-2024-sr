@@ -19,23 +19,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const events = {
         // Add your events here with custom background images
-        '2024-08-10': {
+        '2024-09-10': {
             events: [
                 { time: '10:00 AM', event: 'Meeting with client' },
                 { time: '02:00 PM', event: 'Project Review' }
             ],
             image: 'images/couple-8342763_1920.jpg' // Custom background image for this day
         },
-        '2024-08-11': {
+        '2024-09-11': {
             events: [
                 { time: '10:00 AM', event: 'Meeting with client' },
                 { time: '02:00 PM', event: 'Project Review' }
             ],
             image: 'images/black-and-white-2590810_1920.jpg' // Custom background image for this day
         },
-        '2024-08-15': {
+        '2024-09-14': {
             events: [
-                { time: '09:00 AM', event: 'Project deadline' }
+                { time: '09:00 AM', event: 'Wedding Day' }
             ],
             image: 'images/wedding-rings-1284225.jpg' // Custom background image for this day
         },
@@ -94,6 +94,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             calendarGrid.appendChild(dateDiv);
         }
+
+        // Check for events in the next and previous months
+        checkForEventsInAdjacentMonths();
     }
 
     function updateEventDetails(fullDate) {
@@ -123,6 +126,43 @@ document.addEventListener('DOMContentLoaded', function () {
             calendarDate.textContent = `${new Date(fullDate).getDate()}, ${new Date(fullDate).toLocaleString('default', { weekday: 'long' })}`;
             calendarEvent.textContent = 'No events today.';
             calendarPicture.style.backgroundImage = `url('${defaultImage}')`;
+        }
+    }
+
+    function checkForEventsInAdjacentMonths() {
+        const nextMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
+        const prevMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);
+
+        let hasNextMonthEvents = false;
+        let hasPrevMonthEvents = false;
+
+        // Check for events in the next month
+        Object.keys(events).forEach(eventDate => {
+            const eventDateObj = new Date(eventDate);
+            if (
+                eventDateObj.getFullYear() === nextMonth.getFullYear() &&
+                eventDateObj.getMonth() === nextMonth.getMonth()
+            ) {
+                hasNextMonthEvents = true;
+            }
+            if (
+                eventDateObj.getFullYear() === prevMonth.getFullYear() &&
+                eventDateObj.getMonth() === prevMonth.getMonth()
+            ) {
+                hasPrevMonthEvents = true;
+            }
+        });
+
+        if (hasNextMonthEvents) {
+            nextMonthButton.classList.add('calendar__button--events-next');
+        } else {
+            nextMonthButton.classList.remove('calendar__button--events-next');
+        }
+
+        if (hasPrevMonthEvents) {
+            prevMonthButton.classList.add('calendar__button--events-prev');
+        } else {
+            prevMonthButton.classList.remove('calendar__button--events-prev');
         }
     }
 

@@ -8,8 +8,9 @@
   --line-height: 1.6;
   --primary-font-color: #333;
   /*Color Theme*/
-  --main-color-theme:#6B6C20;
-  --secondary-color-theme: #BDBF5D;
+  --main-color-theme: #76B2E4;
+  --secondary-color-theme: #9C2259;
+  --third-color-theme: #4d6fac;
   /*padding and margin*/
   --primary-margin: 20px;
 }
@@ -58,15 +59,15 @@ position: fixed; /* Set the navbar to fixed position */
 top: 0px; /* Position the navbar at the top of the page */
 width: 100%; /* Full width */
 z-index: 9999; /*kep navbar alway on top of content*/
+background-color: var(--primary-color);
 }
 #nav-active-page {
 font-family: var(--secondary-font-family);
-text-decoration: underline white;
-font-size: 25px;
+font-size: 35px;
 line-height: 1;
-background-color: var(--primary-color);
+background-color: var(--third-color-theme);
 border-radius: 6px;
-color: var(--primary-font-color);
+color: whitesmoke;
 }
 
 li #program-section:hover {
@@ -79,8 +80,6 @@ line-height: 0.9;
   max-width: 70%;
 
 }
-
-
 
 /*Home page*/
 #container-design {
@@ -150,6 +149,12 @@ ul {
 .map-icon {
   max-width: 10%;
   height: auto;
+}
+
+.google-map {
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.53);
+  border: 1px solid rgba(255, 255, 255, 0.75);
 }
 
 /* CSS */
@@ -292,6 +297,28 @@ ul {
 .main-wake {
   margin-top: 45px;
   padding: 25px 20px 20px 20px ;
+}
+.header_title {
+  text-align: center;
+  font-size: 45px;
+  margin-top: 5px;
+}
+
+.client-info {
+  background: rgba(255, 255, 255);
+  border-radius: 6px;
+  box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+  padding: 25px;
+  margin-bottom: 20px;
+  width:100%;
+  font-family: var(--main-font-family);
+  color:#363b41;
+  text-align: center;
+}
+
+.sehemu-aya {
+  font-size: 20px;
+  text-decoration: underline;
 }
 
 /*Program Schedule & Tribute*/

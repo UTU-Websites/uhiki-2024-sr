@@ -1,3 +1,20 @@
+:root {
+  /*Global Colors*/
+  --primary-color: #ffffff;
+  /*Typography*/
+  --main-font-family: "Prata", serif;
+  --secondary-font-family: "Tangerine", cursive;
+  --main-font-size: 16px;
+  --line-height: 1.6;
+  --primary-font-color: #333;
+  /*Color Theme*/
+  --main-color-theme:#76B2E4;
+  --secondary-color-theme: #9C2259;
+  --third-color-theme: #4d6fac;
+  /*padding and margin*/
+  --primary-margin: 20px;
+}
+
 /* Basic body styles, kept separate for easier encapsulation */
 .calendar-container {
   position: relative;
@@ -24,7 +41,7 @@
   height: auto;
   padding: 20px;
   color: #fff;
-  background: #262626 url("images/default-background.png") no-repeat center / cover; /* Default background image */
+  background: #262626  no-repeat center / cover; /* Default background image */
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   border-radius: 8px 8px 0 0;
@@ -61,14 +78,10 @@
   grid-template-columns: repeat(7, 1fr);
   grid-gap: 10px;
   box-sizing: border-box;
-
   background: rgba(255, 255, 255 0.51);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(4.5px);
-  -webkit-backdrop-filter: blur(4.5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.53);
+  border: 1px solid rgba(255, 255, 255, 0.75);
 }
 
 /* Days (S, M, T, W, T, F, S) */
@@ -81,8 +94,9 @@
   color: #262626;
 }
 
+.calendar__day:nth-child(1),
 .calendar__day:nth-child(7) {
-  color: #ff685d;
+  color: var(--secondary-color-theme);
 }
 
 /* Calendar days (1, 2, 3, ...) */
@@ -141,6 +155,30 @@
 #calendar-controls button:hover {
   background-color: #00796b;
 }
+
+/*previous/next button*/
+.calendar__button--events-next::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: red;
+  border-radius: 50%;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.calendar__button--events-prev::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: blue;
+  border-radius: 50%;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
 
 /* From Uiverse.io by yaroslavas2001 */ 
 .btn {
