@@ -84,12 +84,15 @@ line-height: 0.9;
 /*toast*/
 .toast-container {
   top: 55%;
-  background-color: white;
   }
 
   .toast-container img {
   width: 250px;
   height: auto;
+  }
+
+  .toast-body {
+      background-color: white;
   }
 
 /*read more full events section*/
