@@ -8,6 +8,39 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+const toastTrigger = document.getElementById('liveToastBtn')
+const toastLiveExample = document.getElementById('liveToast')
+
+if (toastTrigger) {
+  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+  toastTrigger.addEventListener('click', () => {
+    toastBootstrap.show()
+  })
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    var toggleButtons = document.querySelectorAll(".toggleMatukio");
+  
+    toggleButtons.forEach(function(button) {
+      button.addEventListener("click", function() {
+        var packageCosts = document.querySelector(".matukio-aya");
+        var textElement = this.querySelector(".text");
+  
+        if (packageCosts.style.maxHeight === "0px" || packageCosts.style.maxHeight === "") {
+          // Show the section with a smooth transition
+          packageCosts.style.maxHeight = packageCosts.scrollHeight + "px";
+          textElement.textContent = "Hide All Events"; // Only change the button text
+        } else {
+          // Hide the section
+          packageCosts.style.maxHeight = "0";
+          textElement.textContent = "Show All Events"; // Only change the button text
+        }
+      });
+    });
+});
+
+  
+
 document.addEventListener('DOMContentLoaded', function () {
     const calendarGrid = document.getElementById('calendar-grid');
     const calendarMonth = document.getElementById('calendar-month');

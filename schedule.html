@@ -128,10 +128,9 @@
             <h2 id="calendar-date">Date Loading...</h2>
             <h3 id="calendar-month">Month Loading...</h3>
             <p id="calendar-event">Events Loading...</p>
-            <div>
 
-              <p>
-                <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+              <div>
+              <button class="btn toggleMatukio" type="button">
                 <div class="wrapper">
 
                 <p class="text">All events</p>
@@ -175,9 +174,7 @@
 
                 </div>
               </button>
-              </p>
-
-            </div>
+              </div>
 
           </div>
         <div id="calendar-controls">
@@ -185,9 +182,8 @@
             <button id="next-month">Next Month</button>
         </div>
 
-        <div style="min-height: 5px;">
-          <div class="collapse collapse-horizontal" id="collapseWidthExample">
-            <div class="card card-body" style="width: auto;">
+        <section class="matukio-aya hidden-section" style="max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out;">
+          <div class="card card-body" style="width: auto;">
               <table style="width:auto">
                 <tr>
                   <th>
@@ -223,8 +219,9 @@
                 </tr>
               </table>
             </div>
-          </div>
-        </div>
+        </section>
+
+        
         <div id="calendar-grid"></div>
         
         </div>

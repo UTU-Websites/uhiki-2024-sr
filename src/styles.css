@@ -81,6 +81,24 @@ line-height: 0.9;
 
 }
 
+/*toast*/
+.toast-container {
+  top: 55%;
+  background-color: white;
+  }
+
+  .toast-container img {
+  width: 250px;
+  height: auto;
+  }
+
+/*read more full events section*/
+.hidden-section {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
 /*Home page*/
 #container-design {
 background: rgba(255, 255, 255, 0.35);
